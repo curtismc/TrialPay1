@@ -6,12 +6,6 @@ category2="tools"
 screenshot="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_screenshot.png" 
 thumbnail="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_thumbnail.png"
 author="PayPal, Inc." scrolling="false" height="175" width="125">
-<Locale messages="https://www.paypalobjects.com/webstatic/checkout/ppss/ALL_ALL.xml"/>
-<Locale lang="en" messages="https://www.paypalobjects.com/webstatic/checkout/ppss/en_ALL.xml"/>
-<Locale lang="en" country="US" messages="https://www.paypalobjects.com/webstatic/checkout/ppss/en_US.xml"/>
-<Require feature="dynamic-height"/>
-<Require feature="setprefs"/>
-<Require feature="skins"/>
 </ModulePrefs >
 <UserPref name="btn_type" display_name="__MSG_btn_type__" datatype="enum" required="true">
 <EnumValue value="bn" display_value="__MSG_buy_now_label__"/>
