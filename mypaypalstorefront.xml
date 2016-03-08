@@ -1,15 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="PayPal Simple Storefront" description="PayPal Simple Storefront is a great way of adding a basic e-commerce presence to your website. It's easy to set up, so you can quickly start selling individual items with "Buy Now" buttons, or sell multiple items with "Add to Cart" buttons. It also allows you to accept payments in multiple currencies and add an image, tax and shipping fees. You don't even need a PayPal account to start. PayPal will email you to create one when you receive your first payment. After you've opened your PayPal account, you'll have access to the payments you've received." category="finance" category2="tools" screenshot="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_screenshot.png" thumbnail="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_thumbnail.png" author="PayPal, Inc." scrolling="false" height="175" width="125">
-<Locale messages="https://www.paypalobjects.com/webstatic/checkout/ppss/ALL_ALL.xml"/>
-<Locale lang="en" messages="https://www.paypalobjects.com/webstatic/checkout/ppss/en_ALL.xml"/>
-<Locale lang="en" country="US" messages="https://www.paypalobjects.com/webstatic/checkout/ppss/en_US.xml"/>
-<Locale lang="en" country="GB" messages="https://www.paypalobjects.com/webstatic/checkout/ppss/en_GB.xml"/>
-<Require feature="dynamic-height"/>
-<Require feature="setprefs"/>
-<Require feature="skins"/>
-</ModulePrefs>
+<ModulePrefs title="PayPal Simple Storefront" description="PayPal Simple Storefront"
+category="finance" 
+category2="tools" 
+screenshot="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_screenshot.png" 
+thumbnail="https://www.paypalobjects.com/webstatic/checkout/ppss/paypal_simple_storefront_thumbnail.png"
+author="PayPal, Inc." scrolling="false" height="175" width="125">
+</ModulePrefs >
 <UserPref name="btn_type" display_name="__MSG_btn_type__" datatype="enum" required="true">
 <EnumValue value="bn" display_value="__MSG_buy_now_label__"/>
+<EnumValue value="pn" display_value="__MSG_pay_now_label__"/>
 <EnumValue value="atc" display_value="__MSG_add_to_cart_label__"/>
 <EnumValue value="vc" display_value="__MSG_view_cart_label__"/>
 </UserPref>
@@ -20,26 +20,6 @@
 </UserPref>
 <UserPref name="currency_code" display_name="__MSG_currency_label__" default_value="USD" datatype="enum" required="true">
 <EnumValue value="USD" display_value="__MSG_currency_option_usd__"/>
-<EnumValue value="GBP" display_value="__MSG_currency_option_gbp__"/>
-<EnumValue value="AUD" display_value="__MSG_currency_option_aud__"/>
-<EnumValue value="CAD" display_value="__MSG_currency_option_cad__"/>
-<EnumValue value="CZK" display_value="__MSG_currency_option_czk__"/>
-<EnumValue value="DKK" display_value="__MSG_currency_option_dkk__"/>
-<EnumValue value="EUR" display_value="__MSG_currency_option_eur__"/>
-<EnumValue value="HKD" display_value="__MSG_currency_option_hkd__"/>
-<EnumValue value="HUF" display_value="__MSG_currency_option_huf__"/>
-<EnumValue value="ILS" display_value="__MSG_currency_option_ils__"/>
-<EnumValue value="JPY" display_value="__MSG_currency_option_jpy__"/>
-<EnumValue value="MXN" display_value="__MSG_currency_option_mxn__"/>
-<EnumValue value="NZD" display_value="__MSG_currency_option_nzd__"/>
-<EnumValue value="NOK" display_value="__MSG_currency_option_nok__"/>
-<EnumValue value="PHP" display_value="__MSG_currency_option_php__"/>
-<EnumValue value="PLN" display_value="__MSG_currency_option_pln__"/>
-<EnumValue value="SGD" display_value="__MSG_currency_option_sgd__"/>
-<EnumValue value="SEK" display_value="__MSG_currency_option_sek__"/>
-<EnumValue value="CHF" display_value="__MSG_currency_option_chf__"/>
-<EnumValue value="TWD" display_value="__MSG_currency_option_twd__"/>
-<EnumValue value="THB" display_value="__MSG_currency_option_thb__"/>
 </UserPref>
 <UserPref name="item_name" display_name="__MSG_item_name_label__" datatype="string" required="true"/>
 <UserPref name="item_description" display_name="__MSG_item_description_label__" datatype="string" required="false"/>
