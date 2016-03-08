@@ -12,7 +12,7 @@ author="PayPal, Inc." scrolling="false" height="175" width="125">
 <Require feature="dynamic-height"/>
 <Require feature="setprefs"/>
 <Require feature="skins"/>
-</ModulePrefs/>
+</ModulePrefs >
 <UserPref name="btn_type" display_name="__MSG_btn_type__" datatype="enum" required="true">
 <EnumValue value="bn" display_value="__MSG_buy_now_label__"/>
 <EnumValue value="pn" display_value="__MSG_pay_now_label__"/>
