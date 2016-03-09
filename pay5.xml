@@ -5,7 +5,7 @@
     scrolling="true"/>
   <UserPref name="mylist"
     display_name="Add Terms"
-    datatype="list" />
+    datatype="text" />
   <Content type="html">
   <![CDATA[
   <div id=content_div></div>
