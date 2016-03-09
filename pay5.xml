@@ -15,7 +15,7 @@
     var prefs = new gadgets.Prefs();
 
     // Get the array of search terms entered by the user
-    var terms = prefs.getArray("mylist");
+    var terms = prefs.getString("mylist");
     var html = "";
 
     // If the user has not added any terms yet, display message.
@@ -25,10 +25,7 @@
     }
     else {
       html += "Your terms are:<br /><br />";
-      for (var i = 0; i < terms.length ; i++) {
-        var term = (terms[i]);
-        html += term + "<br />";
-      }
+        html += terms + "<br />";
     }
     document.getElementById("content_div").innerHTML = html;
   </script>
