@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-    title="List Data Type Example"
+    title="String Data Type Example"
     scrolling="true"/>
   <UserPref name="mylist"
     display_name="Add Terms"
