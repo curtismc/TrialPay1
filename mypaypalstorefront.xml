@@ -116,10 +116,81 @@ author="T33 and PayPal, Inc." scrolling="false" height="175" width="125">
 <![CDATA[
 <style type="text/css"> body, .sites-embed-content { background-color:transparent !important }
   #ppWrapper { font-size:12px; width:100%; background-color:transparent; text-align:left }
-  #ppWrapper form { margin:10px } #ppWrapper p { margin:10px 0 } #ppWrapper select { border:1px solid #ADC2D6; font-size:10px } </style>
-  <div id="ppWrapper"> <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_simple_storefront"> </form> </div>
+  #ppWrapper form { margin:10px }
+  #ppWrapper p { margin:10px 0 }
+  #ppWrapper select { border:1px solid #ADC2D6; font-size:10px } </style>
+  <div id="ppWrapper">
+  <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_simple_storefront"> </form>
+  </div>
   <script type="text/javascript">
-    function dynSize() { gadgets.window.adjustHeight(); } // Get userprefs var prefs = new gadgets.Prefs(); var btnType = prefs.getString("btn_type"); var itemOptions = prefs.getArray("os0"); document.getElementById("PPG_Form").action = "https://www.paypal.com/cgi-bin/webscr"; var html = "<style type='text/css'>"; html += "body { background-color: " + gadgets.skins.getProperty(gadgets.skins.Property.BG_COLOR) + "; color: " + gadgets.skins.getProperty(gadgets.skins.Property.FONT_COLOR) + " } "; html += "a { color: " + gadgets.skins.getProperty(gadgets.skins.Property.ANCHOR_COLOR) + " }"; html += "</style>"; html += "<input name='_charset_' type='hidden' value='utf-8'/>"; html += "<input type='hidden' name='business' value='" + prefs.getString("business") + "' />"; html += "<input type='hidden' name='bn' value='" + prefs.getString("bn") + "' />"; // Include most hidden fields & display item details if button type is Buy Now or Add to Cart if (btnType == "bn" || btnType == "atc") { html += "<input type='hidden' name='item_name' value='" + prefs.getString("item_name") + "' />"; html += "<input type='hidden' name='on0' value='" + prefs.getString("on0") + "' />"; html += "<input type='hidden' name='amount' value='" + prefs.getString("amount") + "' />"; html += "<input type='hidden' name='currency_code' value='" + prefs.getString("currency_code") + "' />"; html += "<input type='hidden' name='shipping' value='" + prefs.getString("shipping") + "' />"; html += "<input type='hidden' name='tax_rate' value='" + prefs.getString("tax_rate") + "' />"; html += "<input type='hidden' name='lc' value='" + prefs.getString("lc") + "' />"; // Show photo if url is provided if (prefs.getString("photo") != "") { html += "<p><img src='" + prefs.getString("photo") + "' height='120' border='0' alt='" + prefs.getMsg("item_image_alt") + "' onLoad='dynSize();' /></p>"; } // Show item name html += "<p><strong>" + prefs.getString("item_name") + "</strong></p>"; // Show item description if provided if (prefs.getString("item_description") != "") { html += "<p>" + prefs.getString("item_description") + "</p>"; } // Set the currency character var currencyCode = prefs.getString("currency_code"); var currencyChar = ''; switch (currencyCode) { case "USD": case "AUD": case "CAD": case "HKD": case "NZD": case "SGD": case "TWD": currencyChar = '$'; break; case "GBP": currencyChar = '£'; break; case "EUR": currencyChar = '€'; break; } html += "<p>" + prefs.getMsg("item_price_label") + ": " + currencyChar + prefs.getString("amount") + " " + currencyCode + "<br />"; // Show Shipping if value is not empty if (prefs.getString("shipping") != "") { html += prefs.getMsg("item_shipping_label") + ": " + currencyChar + prefs.getString("shipping") + " " + currencyCode + "<br />"; } // Item Options drop-down menu	if (itemOptions.length > 0) { html += prefs.getString("on0") + ": "; html += "<select name='os0' style='width:auto;'>"; for (var i = 0; i < itemOptions.length; i++) { html += "<option value='" + itemOptions[i] + "'>" + itemOptions[i] + "</option>"; } html += "</select><br>"; } } // Set the button type; if cart, set the cart variable ('add' for Add to Cart / 'display' for View Cart); display the correct button if (btnType == "bn") { html += "<input type='hidden' name='cmd' value='_xclick' />"; html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("buy_now_btn_alt") + "' src='" + prefs.getMsg("buy_now_btn_url") + "' width='" + prefs.getMsg("buy_now_btn_w") + "' height='" + prefs.getMsg("buy_now_btn_h") + "' border='0' /></p></div>"; } else if (btnType == "atc") { html += "<input type='hidden' name='cmd' value='_cart' /><input type='hidden' name='add' value='1' />"; html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("add_to_cart_btn_alt") + "' src='" + prefs.getMsg("add_to_cart_btn_url") + "' width='" + prefs.getMsg("add_to_cart_btn_w") + "' height='" + prefs.getMsg("add_to_cart_btn_h") + "' border='0' /></p></div>"; } else if (btnType == "vc") { html += "<input type='hidden' name='cmd' value='_cart' /><input type='hidden' name='display' value='1' />"; html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("view_cart_btn_alt") + "' src='" + prefs.getMsg("view_cart_btn_url") + "' width='" + prefs.getMsg("view_cart_btn_w") + "' height='" + prefs.getMsg("view_cart_btn_h") + "' border='0' /></div>"; } // Stuff HTML into form document.getElementById("PPG_Form").innerHTML = html; // Resize after content & images have loaded gadgets.util.registerOnLoadHandler(dynSize); </script>
+    function dynSize() { gadgets.window.adjustHeight(); } // Get userprefs
+    var prefs = new gadgets.Prefs();
+    var btnType = prefs.getString("btn_type");
+    var itemOptions = prefs.getArray("os0");
+    document.getElementById("PPG_Form").action = "https://www.paypal.com/cgi-bin/webscr";
+    var html = "<style type='text/css'>";
+    html += "body { background-color: " + gadgets.skins.getProperty(gadgets.skins.Property.BG_COLOR) + "; color: "
+            + gadgets.skins.getProperty(gadgets.skins.Property.FONT_COLOR) + " } ";
+    html += "a { color: " + gadgets.skins.getProperty(gadgets.skins.Property.ANCHOR_COLOR) + " }";
+    html += "</style>"; html += "<input name='_charset_' type='hidden' value='utf-8'/>";
+    html += "<input type='hidden' name='business' value='" + prefs.getString("business") + "' />";
+    html += "<input type='hidden' name='bn' value='" + prefs.getString("bn") + "' />"; // Include most hidden fields & display item details if button type is Buy Now or Add to Cart
+    if (btnType == "bn" || btnType == "atc") {
+       html += "<input type='hidden' name='item_name' value='" + prefs.getString("item_name") + "' />";
+       html += "<input type='hidden' name='on0' value='" + prefs.getString("on0") + "' />";
+       html += "<input type='hidden' name='amount' value='" + prefs.getString("amount") + "' />";
+       html += "<input type='hidden' name='currency_code' value='" + prefs.getString("currency_code") + "' />";
+       html += "<input type='hidden' name='shipping' value='" + prefs.getString("shipping") + "' />";
+       html += "<input type='hidden' name='tax_rate' value='" + prefs.getString("tax_rate") + "' />";
+       html += "<input type='hidden' name='lc' value='" + prefs.getString("lc") + "' />"; // Show photo if url is provided
+       if (prefs.getString("photo") != "") {
+        html += "<p><img src='" + prefs.getString("photo") + "' height='120' border='0' alt='" + prefs.getMsg("item_image_alt")
+          + "' onLoad='dynSize();' /></p>";
+          } // Show item name
+      html += "<p><strong>" + prefs.getString("item_name") + "</strong></p>"; // Show item description if provided
+      if (prefs.getString("item_description") != "") {
+        html += "<p>" + prefs.getString("item_description") + "</p>";
+        } // Set the currency character
+      var currencyCode = prefs.getString("currency_code");
+      var currencyChar = '';
+      switch (currencyCode) {
+       case "USD": case "AUD": case "CAD": case "HKD": case "NZD": case "SGD": case "TWD": currencyChar = '$'; break;
+       case "GBP": currencyChar = '£'; break;
+       case "EUR": currencyChar = '€'; break;
+       }
+      html += "<p>" + prefs.getMsg("item_price_label") + ": " + currencyChar + prefs.getString("amount") + " " + currencyCode
+                + "<br />"; // Show Shipping if value is not empty
+      if (prefs.getString("shipping") != "") {
+        html += prefs.getMsg("item_shipping_label") + ": " + currencyChar + prefs.getString("shipping") + " " + currencyCode
+                 + "<br />"; } // Item Options drop-down menu
+      if (itemOptions.length > 0) {
+        html += prefs.getString("on0") + ": ";
+        html += "<select name='os0' style='width:auto;'>";
+        for (var i = 0; i < itemOptions.length; i++) {
+          html += "<option value='" + itemOptions[i] + "'>" + itemOptions[i] + "</option>";
+          }
+        html += "</select><br>";
+      }
+    } // Set the button type; if cart, set the cart variable ('add' for Add to Cart / 'display' for View Cart); display the correct button
+    if (btnType == "bn") {
+      html += "<input type='hidden' name='cmd' value='_xclick' />";
+      html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("buy_now_btn_alt") + "' src='"
+            + prefs.getMsg("buy_now_btn_url") + "' width='" + prefs.getMsg("buy_now_btn_w") + "' height='"
+            + prefs.getMsg("buy_now_btn_h") + "' border='0' /></p></div>";
+      }
+    else if (btnType == "atc") {
+      html += "<input type='hidden' name='cmd' value='_cart' />    <input type='hidden' name='add' value='1' />";
+      html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("add_to_cart_btn_alt") + "' src='"
+              + prefs.getMsg("add_to_cart_btn_url") + "' width='" + prefs.getMsg("add_to_cart_btn_w") + "' height='"
+              + prefs.getMsg("add_to_cart_btn_h") + "' border='0' /></p></div>";
+    } else if (btnType == "vc") {
+      html += "<input type='hidden' name='cmd' value='_cart' />    <input type='hidden' name='display' value='1' />";
+      html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("view_cart_btn_alt") + "' src='"
+               + prefs.getMsg("view_cart_btn_url") + "' width='" + prefs.getMsg("view_cart_btn_w") + "' height='"
+               + prefs.getMsg("view_cart_btn_h") + "' border='0' /></div>";
+    } // Stuff HTML into form
+    document.getElementById("PPG_Form").innerHTML = html; // Resize after content & images have loaded
+    gadgets.util.registerOnLoadHandler(dynSize); </script>
 ]]>
 </Content>
 </Module>
