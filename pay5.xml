@@ -54,13 +54,6 @@
                  +"width='1' height='1 border='0' /></p>";
     } // Stuff HTML into form
     
-<!-- Display the payment button. -->
-  <input type="image" name="submit" border="0"
-    src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-    alt="PayPal - The safer, easier way to pay online">
-  <img alt="" border="0" width="1" height="1"
-    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-    
     document.getElementById("PPG_Form").innerHTML = html; // Resize after content & images have loaded
     gadgets.util.registerOnLoadHandler(dynSize);  
     
