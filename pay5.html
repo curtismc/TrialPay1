@@ -49,9 +49,7 @@
        case "EUR": currencyChar = '€'; break;
        }
       html += "<p>" + currencyChar + amount + " " + currencyCode + "<br />"; 
-      html += "<p><input type='image' name='submit' alt='" + prefs.getMsg("buy_now_btn_alt") + "' src='"
-            + prefs.getMsg("buy_now_btn_url") + "' width='" + prefs.getMsg("buy_now_btn_w") + "' height='"
-            + prefs.getMsg("buy_now_btn_h") + "' border='0' /></p></div>";
+      //html += "</div>";
     } // Stuff HTML into form
   
     document.getElementById("PPG_Form").innerHTML = html; // Resize after content & images have loaded
