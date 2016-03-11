@@ -12,9 +12,10 @@
   <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_interface"> </form>
   </div>
   <script type="text/javascript">
+  var terms = prefs.getString("business_name");
   var html = "";
     html += "<form action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
-    html += "  <input type='hidden' name='business' value='payments@troop33.org'>";
+    html += "  <input type='hidden' name='business' value='"+terms+"'>";
     html += "  <input type='hidden' name='cmd' value='_xclick'>";
     html += "";
     html += "  <!-- Specify details about the item that buyers will purchase. -->";
