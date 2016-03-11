@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <Module>
   <ModulePrefs
     title="String Data Type Example"
@@ -12,6 +13,9 @@
   <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_interface"> </form>
   </div>
   <script type="text/javascript">
+  // Get userprefs
+  var prefs = new gadgets.Prefs();
+
   var terms = prefs.getString("business_name");
   var html = "";
     html += "<form action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
@@ -24,7 +28,8 @@
     html += "  <input type='hidden' name='currency_code' value='USD'>";
     html += "";
     html += "<table>";
-    html += "<tr><td><input type='hidden' name='on0' value='Payment is for which person?'>Payment is for which person?</td></tr><tr><td><input type='text' name='os0' maxlength='200'></td></tr>";
+    html += "<tr><td><input type='hidden' name='on0' value='Payment is for which person?'>"
+    html += "</td></tr><tr><td><input type='text' name='os0' maxlength='200'></td></tr>";
     html += "</table>";
     html += "<input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif' border='0' ";
     html += "   name='submit' alt='PayPal - The safer, easier way to pay online!'>";
