@@ -8,11 +8,7 @@
     datatype="text" />
   <Content type="html">
   <![CDATA[
-  <div id="ppWrapper">
-  <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_interface"> </form>
-  </div>
-  <script type="text/javascript">
-var html = "  
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
   <input type="hidden" name="business" value="payments@troop33.org">
   <input type="hidden" name="cmd" value="_xclick">
