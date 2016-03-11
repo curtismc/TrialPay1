@@ -12,23 +12,25 @@
   <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_interface"> </form>
   </div>
   <script type="text/javascript">
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-  <input type="hidden" name="business" value="payments@troop33.org">
-  <input type="hidden" name="cmd" value="_xclick">
+  var html =
+"<form action='https://www.paypal.com/cgi-bin/webscr' method='post'>
+  <input type='hidden' name='business' value='payments@troop33.org'>
+  <input type='hidden' name='cmd' value='_xclick'>
 
   <!-- Specify details about the item that buyers will purchase. -->
-  <input type="hidden" name="item_name" value="BlackMountainScoutTrip_Scout">
-  <input type="hidden" name="amount" value="0.35">
-  <input type="hidden" name="currency_code" value="USD">
+  <input type='hidden' name='item_name' value='BlackMountainScoutTrip_Scout'>
+  <input type='hidden' name='amount' value='0.35'>
+  <input type='hidden' name='currency_code' value='USD'>
 
 <table>
-<tr><td><input type="hidden" name="on0" value="Payment is for which person?">Payment is for which person?</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+<tr><td><input type='hidden' name='on0' value='Payment is for which person?'>Payment is for which person?</td></tr><tr><td><input type='text' name='os0' maxlength='200'></td></tr>
 </table>
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" 
-   name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif' border='0' 
+   name='submit' alt='PayPal - The safer, easier way to pay online!'>
+<img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'>
 </form>
+";
+    document.getElementById("PPG_Form").innerHTML = html; // Resize after content & images have loaded
 ]]>
   </Content>
 </Module>
