@@ -2,12 +2,18 @@
 
 <Module>
   <ModulePrefs
-    title="String Data Type Example 3.01"
+    title="String Data Type Example 3.20"
     scrolling="true"/>
-  <UserPref name="business_name"
+  <UserPref name="business_name_pref"
     display_name="Email Address of Business to Pay:"
     datatype="text" />
-  <Content type="html">
+  <UserPref name="item_name_pref"
+    display_name="Item Name:"
+    datatype="text" />
+  <UserPref name="amount_pref"
+    display_name="Amount to Pay:"
+    datatype="text" />
+<Content type="html">
   <![CDATA[
 <div id="ppWrapper">
   <form id="PPG_Form" name="PPG_Form" action="" method="post" target="paypal_interface"> </form>
@@ -16,16 +22,19 @@
   // Get userprefs
   var prefs = new gadgets.Prefs();
 
-  var terms = prefs.getString("business_name");
-    var html = "<style type='text/css'>";
+  var business_name = prefs.getString("business_name_pref");
+  var item_name = prefs.getString("item_name_pref");
+  var amount = prefs.getString("amount_pref");
+  
+  var html = "<style type='text/css'>";
     html += "</style>";
     html += "  <input name='_charset_' type='hidden' value='utf-8'/>";
-    html += "  <input type='hidden' name='business' value='"+terms+"'>";
+    html += "  <input type='hidden' name='business' value='"+business_name+"'>";
     html += "  <input type='hidden' name='cmd' value='_xclick'>";
     html += "";
     html += "  <!-- Specify details about the item that buyers will purchase. -->";
-    html += "  <input type='hidden' name='item_name' value='BlackMountainScoutTrip_Scout'>";
-    html += "  <input type='hidden' name='amount' value='0.35'>";
+    html += "  <input type='hidden' name='item_name' value='"+item_name+"'>";
+    html += "  <input type='hidden' name='amount' value='"+amount+"'>";
     html += "  <input type='hidden' name='currency_code' value='USD'>";
     html += "";
     html += "<table>";
