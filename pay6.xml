@@ -2,7 +2,7 @@
 
 <Module>
   <ModulePrefs
-    title="String Data Type Example 3.20"
+    title="String Data Type Example 3.21"
     scrolling="true"/>
   <UserPref name="business_name_pref"
     display_name="Email Address of Business to Pay:"
@@ -28,6 +28,7 @@
   
   var html = "<style type='text/css'>";
     html += "</style>";
+    html += "<legend>Pay $"+amount+" for this activity</legend>";
     html += "  <input name='_charset_' type='hidden' value='utf-8'/>";
     html += "  <input type='hidden' name='business' value='"+business_name+"'>";
     html += "  <input type='hidden' name='cmd' value='_xclick'>";
@@ -36,7 +37,6 @@
     html += "  <input type='hidden' name='item_name' value='"+item_name+"'>";
     html += "  <input type='hidden' name='amount' value='"+amount+"'>";
     html += "  <input type='hidden' name='currency_code' value='USD'>";
-    html += "Pay $"+amount+" for this activity";
     html += "";
     html += "<table>";
     html += "<tr><td><input type='hidden' name='on0' value='for_' >Which Particpant is this Payment for?"
