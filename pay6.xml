@@ -36,6 +36,7 @@
     html += "  <input type='hidden' name='item_name' value='"+item_name+"'>";
     html += "  <input type='hidden' name='amount' value='"+amount+"'>";
     html += "  <input type='hidden' name='currency_code' value='USD'>";
+    html += "Pay $"+amount+" for this activity";
     html += "";
     html += "<table>";
     html += "<tr><td><input type='hidden' name='on0' value='for_' >Which Particpant is this Payment for?"
