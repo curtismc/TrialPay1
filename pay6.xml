@@ -28,6 +28,7 @@
   
   var html = "<style type='text/css'>";
     html += "</style>";
+    html += "<fieldset>";
     html += "<legend>Pay $"+amount+" for this activity</legend>";
     html += "  <input name='_charset_' type='hidden' value='utf-8'/>";
     html += "  <input type='hidden' name='business' value='"+business_name+"'>";
@@ -45,6 +46,7 @@
     html += "<input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif' border='0' ";
     html += "   name='submit' alt='PayPal - The safer, easier way to pay online!'>";
     html += "<img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'>";
+    html += "</fieldset>";
     html += "</form>";
 
     document.getElementById("PPG_Form").action = "https://www.paypal.com/cgi-bin/webscr";
