@@ -2,7 +2,7 @@
 
 <Module>
   <ModulePrefs
-    title="String Data Type Example 3.0"
+    title="String Data Type Example 3.01"
     scrolling="true"/>
   <UserPref name="business_name"
     display_name="Email Address of Business to Pay:"
