@@ -39,7 +39,7 @@
     html += "  <input type='hidden' name='currency_code' value='USD'>";
     html += "";
     html += "<table>";
-    html += "<tr><td><input type='hidden' name='on0' value='for_' >Which Particpant is this Payment for?"
+    html += "<tr><td><input type='hidden' name='on0' value='for_' >Which Participant is this Payment for?"
     html += "</td></tr><tr><td><input type='text' name='os0' maxlength='200' required></td></tr>";
     html += "</table>";
     html += "<input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif' border='0' ";
