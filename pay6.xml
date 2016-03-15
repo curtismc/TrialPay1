@@ -2,7 +2,7 @@
 
 <Module>
   <ModulePrefs
-    title="String Data Type Example 3.28"
+    title="String Data Type Example 3.29"
     scrolling="true"/>
   <UserPref name="business_name_pref"
     display_name="Email Address of Business to Pay:"
@@ -32,7 +32,7 @@
     html += "p {font-family: arial,sans-serif;font-size: 12px;} ";
     html += "</style>";
     html += "<fieldset>";
-    html += "<legend><b>Pay $"+amount+" for this activity</b></legend>";
+    html += "<legend><b>Pay $"+amount+" for this Activity Now</b></legend>";
     html += "  <input name='_charset_' type='hidden' value='utf-8'/>";
     html += "  <input type='hidden' name='business' value='"+business_name+"'>";
     html += "  <input type='hidden' name='cmd' value='_xclick'>";
