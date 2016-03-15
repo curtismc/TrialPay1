@@ -2,7 +2,7 @@
 
 <Module>
   <ModulePrefs
-    title="String Data Type Example 3.27"
+    title="String Data Type Example 3.28"
     scrolling="true"/>
   <UserPref name="business_name_pref"
     display_name="Email Address of Business to Pay:"
@@ -46,7 +46,8 @@
     html += "<tr><td><input type='hidden' name='on0' value='for_' ><font size='2'>Enter Participant Name for Payment:</font>"
     html += "</td></tr><tr><td><input type='text' name='os0' maxlength='200' required></td></tr>";
     html += "</table>";
-    html += "<input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif' border='0' ";
+    html += "<input type='image' src='https://www.paypalobjects.com/webstatic/en_US/btn/btn_paynow_cc_144x47.png' border='0' ";
+    // Old button https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif
     html += "   name='submit' alt='PayPal - The safer, easier way to pay online!'>";
     html += "<img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'>";
     html += "</fieldset>";
