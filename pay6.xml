@@ -27,6 +27,8 @@
   var amount = prefs.getString("amount_pref");
   
   var html = "<style type='text/css'>";
+    html += "body { background-color: white ; color: black } ";
+    html += "a { color: black  }";
     html += "</style>";
     html += "<fieldset>";
     html += "<legend>Pay $"+amount+" for this activity</legend>";
