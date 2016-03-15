@@ -29,7 +29,7 @@
   var html = "<style type='text/css'>";
     html += "body { background-color: white ; color: black } ";
     html += "a { color: black  }";
-    html += "p {font-family: arial,sans-serif;font-size: 23px;}
+    html += "p {font-family: arial,sans-serif;font-size: 23px;}";
     html += "</style>";
     html += "<fieldset>";
     html += "<legend><b>Pay $"+amount+" for this activity</b></legend>";
